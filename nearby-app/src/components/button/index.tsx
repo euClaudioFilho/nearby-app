@@ -9,7 +9,7 @@ type ButtonProps = TouchableOpacityProps & {
 
 function Button({ children, style, isLoading = false, ...rest }: ButtonProps) {
     return (
-        <TouchableOpacity style={[s.container, style]} disabled {...rest}>
+        <TouchableOpacity style={[s.container, style]} disabled={isLoading} {...rest}>
             {
                 isLoading ? <ActivityIndicator size={"small"} color={colors.gray[100]} /> : children
             }
